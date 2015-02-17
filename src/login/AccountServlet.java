@@ -74,13 +74,13 @@ public class AccountServlet extends HttpServlet {
 			request.setAttribute("errors","Bad username password combo");
 			request.setAttribute("name",username);
 			if(username != null && username.trim().equals("")){
-				request.setAttribute("type","Username and/or password can not be empty");
+				request.setAttribute("type","Username and/or password can not be empty.");
 			}
 			if(password != null && password.equals("")){
-				request.setAttribute("type","Username and/or password can not be empty");
+				request.setAttribute("type","Username and/or password can not be empty.");
 			}
 			if(username == null || password == null){
-				request.setAttribute("type","Username and/or password can not be empty");
+				request.setAttribute("type","Username and/or password can not be empty.");
 			}
 			doGet(request,response);
 		}

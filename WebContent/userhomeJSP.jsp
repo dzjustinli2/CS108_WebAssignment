@@ -8,7 +8,7 @@
 <title><%= session.getAttribute("username") %></title>
 </head>
 <body>
-	<h1 class="text-center">Welcome <%= upperCase((String)session.getAttribute("username")) %></h1>
+	<h1 class="text-center">Welcome <%= upperTokens((String)session.getAttribute("username")) %></h1>
 	<form class="form-horizontal text-center" action="logout" method="post">
 		<button type="submit" class="btn btn-danger">Logout</button>
 	</form>
@@ -27,5 +27,15 @@ String upperCase(String str){
 		name = name + chars[i];
 	}
 	return name;
+}
+
+String upperTokens(String str){
+	if(str == null || str.equals("")) return "";
+	String[] userName = str.split(" ");
+	String name = "";
+	for(int i = 0; i < userName.length; i++){
+		name = name + " " + upperCase(userName[i]);
+	}
+	return name.trim();
 }
 %>
