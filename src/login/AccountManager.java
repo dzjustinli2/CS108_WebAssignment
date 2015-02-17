@@ -12,6 +12,7 @@ public class AccountManager {
 	}
 	
 	public boolean addUser(String username, String password){
+		if(username == null || username.equals("")) return false;
 		username = username.toLowerCase().trim();
 		if(users.containsKey(username)){
 			return false;
@@ -22,6 +23,7 @@ public class AccountManager {
 	}
 	
 	public boolean checkCredentials(String username, String password){
+		if(username == null || username.equals("")) return false;
 		username = username.toLowerCase().trim();
 		if(!users.containsKey(username)){
 			return false;

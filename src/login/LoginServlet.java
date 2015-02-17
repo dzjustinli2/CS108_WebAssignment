@@ -55,11 +55,14 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("username") != null){
 			//Already logged in, send to user page
+			RequestDispatcher dispatch = request.getRequestDispatcher("userhomeJSP.jsp");
+			dispatch.forward(request, response);
+			return;
 		}
 		ServletContext sc = getServletContext();
 		AccountManager am = (AccountManager)sc.getAttribute("accountManager");
-		String username = (String)request.getAttribute("username");
-		String password = (String)request.getAttribute("password");
+		String username = (String)request.getParameter("username");
+		String password = (String)request.getParameter("password");
 		if(am.checkCredentials(username,password)){
 			session.setAttribute("username",username);
 			request.removeAttribute("errors");

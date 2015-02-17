@@ -8,14 +8,15 @@
 <title>Login</title>
 </head>
 
+<body>
+
 <div class="container-fluid app">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 		
-<body>
 	<h1 class="text-center"><%= request.getAttribute("title") %></h1>
 	<p class="text-center"><%= request.getAttribute("message") %></p>
-	
+	<br>
 	<form class="form-horizontal" action="login" method="post">
 		<div class="form-group">
 			<label for="login-email" class="col-sm-3 control-label">Email:</label>
@@ -37,10 +38,11 @@
 		  </div>
 		</div>
 	</form> 
-</body>
 
 		</div>
 	</div>
 </div>
+
+</body>
 
 </html>
