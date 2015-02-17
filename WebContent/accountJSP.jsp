@@ -4,9 +4,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <title>Insert title here</title>
 </head>
 <body>
+
+<div class="container-fluid app">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+
+	<h1 class="text-center"><%= request.getAttribute("title") %></h1>
+	<p class="text-center"><%= request.getAttribute("message") %></p>
+	<br>
+	<form class="form-horizontal" action="signup" method="post">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Username:</label>
+			<div class="col-sm-6">
+		    <input name="username" class="form-control">
+		  </div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Password:</label>
+			<div class="col-sm-6">
+		    <input type="password" name="password" class="form-control">
+		  </div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-6">
+		    <button type="submit" class="btn btn-success">Sign Up</button>
+		    <a href="/WebAssignment/login">Already have an account?</a>
+		  </div>
+		</div>
+	</form> 
+
+		</div>
+	</div>
+</div>
 
 </body>
 </html>

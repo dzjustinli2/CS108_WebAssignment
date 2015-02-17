@@ -12,7 +12,10 @@ public class AccountManager {
 	}
 	
 	public boolean addUser(String username, String password){
-		if(username == null || username.equals("")) return false;
+		//Don't want to have empty usernames
+		if(username == null || username.trim().equals("")) return false;
+		//Need to have a password
+		if(password == null || password.equals("")) return false;
 		username = username.toLowerCase().trim();
 		if(users.containsKey(username)){
 			return false;
