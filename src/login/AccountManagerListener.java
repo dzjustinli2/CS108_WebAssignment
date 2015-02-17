@@ -1,6 +1,7 @@
 package login;
 
 import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
@@ -28,7 +29,8 @@ public class AccountManagerListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent sce) {
         AccountManager am = new AccountManager();
-        sce.getServletContext().setAttribute("accountManager",am);
+        ServletContext sc = sce.getServletContext();
+        sc.setAttribute("accountManager",am);
     }
 	
 }
