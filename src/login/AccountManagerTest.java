@@ -1,4 +1,4 @@
-package user;
+package login;
 
 import static org.junit.Assert.*;
 import org.junit.*;
@@ -33,3 +33,4 @@ public class AccountManagerTest {
 		assertFalse(am.checkCredentials("Cleo","wronge_password"));
 	}
 }
+
